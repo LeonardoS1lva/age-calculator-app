@@ -105,6 +105,14 @@ function validForm() {
         inputMonth.classList.add("error-border");
         labelMonth.classList.add("error-empty");
         isValidDate = false;
+    } else if (inputYear.value == actualDate.getFullYear()) {
+        if (inputMonth.value > (actualDate.getMonth() + 1)) {
+            fieldErrorYear.innerHTML = "Must be in the past";
+            isValidDate = false;
+        } else if (inputDay.value > actualDate.getDate()) {
+            fieldErrorYear.innerHTML = "Must be in the past";
+            isValidDate = false;
+        }
     } else if (!validDate()) {
         isValidDate = false;
     }
@@ -136,10 +144,19 @@ function calcAge() {
             resultMonth.innerHTML = 12 - (inputMonth.value - actualMonth);
             resultDay.innerHTML = actualDay - inputDay.value;
         }
-    } else {
+    } else if (inputMonth.value == actualMonth) {
         if (inputDay.value > actualDay) {
             resultYear.innerHTML = (actualYear - inputYear.value) - 1;
             resultMonth.innerHTML = 12 - (actualMonth - inputMonth.value) - 1;
+            resultDay.innerHTML = calcDay(actualMonth, actualYear) - (inputDay.value - actualDay);
+        } else {
+            resultMonth.innerHTML = actualMonth - inputMonth.value;
+            resultDay.innerHTML = actualDay - inputDay.value;
+        }
+    } else {
+        if (inputDay.value > actualDay) {
+            resultYear.innerHTML = (actualYear - inputYear.value);
+            resultMonth.innerHTML = 12 - (actualMonth - inputMonth.value);
             resultDay.innerHTML = calcDay(actualMonth, actualYear) - (inputDay.value - actualDay);
         } else {
             resultMonth.innerHTML = actualMonth - inputMonth.value;
