@@ -1,0 +1,144 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(0, 0%, 94%);
+    padding: 3rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 1rem 1rem 10rem 1rem;
+    padding: 2rem;
+}
+
+.header {
+    display: flex;
+    gap: 20px;
+}
+
+.header div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.header label {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: hsl(0, 1%, 44%);
+    font-weight: 400;
+    font-size: small;
+}
+
+.header input {
+    width: 10rem;
+    border-radius: 5px;
+    border: 1px solid hsl(0, 0%, 86%);
+    padding: 0.5rem;
+    font-weight: 700;
+    font-size: 32px;
+    cursor: pointer;
+    caret-color: hsl(259, 100%, 65%);
+}
+
+.header input:focus {
+    outline: 0;
+    border-color: hsl(259, 100%, 65%);
+}
+
+.error-empty,
+.error-field {
+    color: hsl(0, 100%, 67%);
+}
+
+.error-border {
+    border-color: hsl(0, 100%, 67%) !important;
+}
+
+.error-field {
+    font-weight: 400;
+    font-style: italic;
+    font-size: small;
+}
+
+.line-img {
+    display: flex;
+    align-items: center;
+}
+
+.line {
+    background-color: hsl(0, 0%, 86%);
+    height: 1px;
+    width: 35rem;
+}
+
+.btn-submit {
+    outline: 0;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    background-color: hsl(259, 100%, 65%);
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.btn-submit:hover {
+    background-color: hsl(0, 0%, 8%);
+}
+
+.date-result {
+    font-size: 60px;
+    font-weight: 800;
+    font-style: italic;
+    background-color: hsl(0, 0%, 100%);
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    color: hsl(0, 0%, 8%);
+}
+
+.date-result strong {
+    color: hsl(259, 100%, 65%);
+}
+
+@media screen and (max-width:700px) {
+    body {
+        min-width: 375px;
+        padding: 1rem;
+    }
+
+    main {
+        gap: 2rem;
+        border-radius: 1.5rem 1.5rem 7rem 1.5rem;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .header input {
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .line-img {
+        /* display: none; */
+        justify-content: center;
+        
+    }
+
+    .line{
+        width: 100%;
+    }
+
+    .btn-submit {
+        position: absolute;
+    }
+}
